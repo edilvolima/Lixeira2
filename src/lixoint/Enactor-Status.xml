@@ -38,7 +38,7 @@
             <Attribute name="status"/>
         </ServiceInput>
     </Reference>
-    <!-- status do oleo -->
+    <!-- status do oleo --><!--
     <Reference name="VaziaOleo">
         <Query name="lixeiraVaziaOleo"> 
             (
@@ -73,7 +73,7 @@
             <Attribute name="status"/>
         </ServiceInput>
     </Reference>
-        <!--status do Vidro -->
+        <!--status do Vidro --><!--
     <Reference name="VaziaVidro">
         <Query name="lixeiraVaziaVidro"> 
             (
@@ -107,5 +107,5 @@
         <ServiceInput function="statusControleVidro" service="StatusService">
             <Attribute name="status"/>
         </ServiceInput>
-    </Reference>
+    </Reference> -->
 </Enactor>

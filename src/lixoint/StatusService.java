@@ -37,7 +37,7 @@ public class StatusService extends Service {
                                             "Muda o status da Lixeira de Plasticos",
                                             widget.getNonConstantAttributes(),
                                             FunctionDescription.FUNCTION_SYNC));
-                                add(new FunctionDescription(
+                                /*add(new FunctionDescription(
                                             OLEO,
                                             "Muda o status da Lixeira de Oleo",
                                             widget.getNonConstantAttributes(),
@@ -46,7 +46,7 @@ public class StatusService extends Service {
                                             VIDRO,
                                             "Muda o status da Lixeira de Vidro",
                                             widget.getNonConstantAttributes(),
-                                            FunctionDescription.FUNCTION_SYNC));
+                                            FunctionDescription.FUNCTION_SYNC));*/
                                             
                                 }
                         });
@@ -61,7 +61,7 @@ public class StatusService extends Service {
 			int status = serviceInput.getInput().getAttributeValue("status");
 			application.setStatusPlastico(status);
 		}
-		
+		/*
 		else if (functionName.equals(OLEO)) {
                         int status = serviceInput.getInput().getAttributeValue("status");	
                         application.setStatusOleo(status);
@@ -71,7 +71,7 @@ public class StatusService extends Service {
                         int status = serviceInput.getInput().getAttributeValue("status");
                         application.setStatusVidro(status);
                 }
-		
+		*/
 		return new DataObject(); // no particular info to return
 	}
 }
