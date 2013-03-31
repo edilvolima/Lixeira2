@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Widget name="WidgetTela" xmlns="http://www.contexttoolkit.org/ctk">
+	<Attributes>
+		<Attribute name="mensagem" type="int"/>
+	</Attributes>
+</Widget>

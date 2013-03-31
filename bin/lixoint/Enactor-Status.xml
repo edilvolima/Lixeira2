@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enactor name="EnactorStatus" xmlns="http://www.contexttoolkit.org/ctk">
+    <InWidget href="Widget-Lixeira.xml"/>
+    <OutWidget href="Widget-Status-Lixeira.xml"/>
+    
+    <OutcomeName>status</OutcomeName>
+    <Reference name="Plasticovazio">
+        <Query name="lixeiraPlasticoVazia"> 
+            (
+              (EQUAL quantPlastico 0) 
+            ) 
+        </Query>
+        <Outcome outAttribute="status">"Vazio"</Outcome>
+        <ServiceInput function="statusControlePlastico" service="statusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+        
+    </Reference>
+    <Reference name="EnchendoPlastico">
+        <Query name="lixeiraEnchendoPlastico"> 
+            (OR
+                (GREATER quantPlastico 0)
+                (LESS quantPlastico 250)
+            ) 
+        </Query>
+        <Outcome outAttribute="status">"Enchendo"</Outcome>
+        <ServiceInput function="statusControlePlastico" service="StatusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+        
+    </Reference>
+        <Reference name="CheiaPlastico">
+        <Query name="lixeiraCheiaPlastico"> 
+            (
+                (EQUAL quantPlastico 250)
+            ) 
+        </Query>
+        <Outcome outAttribute="status"> "Cheia" </Outcome>
+        <ServiceInput function="statusControlePlastico" service="StatusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+    </Reference>
+    
+    <!-- status do oleo -->
+    
+    <Reference name="VaziaOleo">
+        <Query name="lixeiraVaziaOleo"> 
+            (
+              (EQUAL quantOleo 0) 
+            ) 
+        </Query>
+        <Outcome outAttribute="status">"Vazio"</Outcome>
+        <ServiceInput function="statusControleOleo" service="statusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+        
+    </Reference>
+    <Reference name="EnchendoOleo">
+        <Query name="lixeiraEnchendoOleo"> 
+            (OR
+                (GREATER quantOleo 0)
+                (LESS quantOleo 250)
+            ) 
+        </Query>
+        <Outcome outAttribute="status"> "Enchendo" </Outcome>
+        <ServiceInput function="statusControleOleo" service="StatusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+        
+    </Reference>
+        <Reference name="CheiaOleo">
+        <Query name="lixeiraCheiaOleo"> 
+            (
+                 (EQUAL quantOleo 250)
+            ) 
+        </Query>
+        <Outcome outAttribute="status"> "Cheia" </Outcome>
+        <ServiceInput function="statusControleOleo" service="StatusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+    </Reference>
+    
+        <!--status do Vidro -->
+        
+    <Reference name="VaziaVidro">
+        <Query name="lixeiraVaziaVidro"> 
+            (
+                (EQUAL quantVidro 0) 
+            ) 
+        </Query>
+        <Outcome outAttribute="status">"Vazio"</Outcome>
+        <ServiceInput function="statusControleVidro" service="statusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+        
+    </Reference>
+    <Reference name="EnchendoVidro">
+        <Query name="lixeiraEnchendoVidro"> 
+            (OR
+                (GREATER quantVidro 0)
+                (LESS quantVidro 250)
+            ) 
+        </Query>
+        <Outcome outAttribute="status"> "Enchendo" </Outcome>
+        <ServiceInput function="statusControleVidro" service="StatusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+        
+    </Reference>
+        <Reference name="CheiaVidro">
+        <Query name="lixeiraCheiaVidro"> 
+            (
+                (EQUAL quantVidro 250)
+            ) 
+        </Query>
+        <Outcome outAttribute="status"> "Cheia" </Outcome>
+        <ServiceInput function="statusControleVidro" service="StatusService">
+            <Attribute name="status"/>
+        </ServiceInput>
+    </Reference>
+    
+</Enactor>

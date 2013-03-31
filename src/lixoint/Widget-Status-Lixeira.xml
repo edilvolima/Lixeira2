@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Widget name="WidgetStatusLixeira" xmlns="http://www.contexttoolkit.org/ctk">
+	<Attributes>
+		<Attribute name="status" type="int"/>
+	</Attributes>
+</Widget>

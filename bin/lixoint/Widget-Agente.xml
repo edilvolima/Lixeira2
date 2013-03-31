@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Widget name="WidgetAgente" xmlns="http://www.contexttoolkit.org/ctk">
+	<Attributes>
+		<Attribute name="distancia1" type="int"/>
+		<Attribute name="distancia2" type="int"/>
+	</Attributes>
+</Widget>

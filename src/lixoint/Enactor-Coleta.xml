@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!--status do oleo -->
+<Enactor name="EnactorColeta" xmlns="http://www.contexttoolkit.org/ctk">
+    <InWidget href="Widget-Lixeira.xml"/>
+    <InWidget href="Widget-Agente.xml"/>
+    <OutWidget href="Widget-Tela.xml"/>
+    
+    <!--
+        Mensagem na Tela
+    -->
+    
+    <OutcomeName>mensagem</OutcomeName>
+    <Reference name="Limite">
+        <Query name="lixeiraNoLimite"> 
+            (OR
+                (GREATER quantPlastico 225) 
+                (GREATER quantOleo 225)
+                (GREATER quantVidro 225)
+            ) 
+        </Query>
+        <Outcome outAttribute="mensagem">0</Outcome>
+        <ServiceInput function="mensagemLimite" service="MensagemService">
+            <Attribute name="mensagem"/>
+        </ServiceInput>
+        
+    </Reference>
+    <Reference name="Busca1">
+        <Query name="buscaAgente1"> 
+            (
+                (QUERY lixeiraNoLimite)
+                (GREATER distancia1 distancia2)
+                (EQUAL distancia1 distancia2)
+            ) 
+        </Query>
+        <Outcome outAttribute="mensagem">distancia1</Outcome>
+        <ServiceInput function="mensagemBuscaAgente" service="MensagemService">
+            <Attribute name="mensagem"/>
+        </ServiceInput>
+        
+    </Reference>
+    
+    <Reference name="Busca2">
+        <Query name="buscaAgente2"> 
+            (ELSE
+                (QUERY buscaAgente1)
+            ) 
+        </Query>
+        <Outcome outAttribute="mensagem">distancia2</Outcome>
+        <ServiceInput function="mensagemBuscaAgente" service="MensagemService">
+            <Attribute name="mensagem"/>
+        </ServiceInput>
+    </Reference>
+    
+</Enactor>
